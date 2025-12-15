@@ -1,0 +1,214 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Mai",
+      "poster": "assets/images/poster_mai.png",
+      "banner": "assets/images/banner_mai.png",
+      "genre": "Tình cảm, Tâm lý",
+      "duration": 131,
+      "description": "Một câu chuyện tình đầy trắc trở của người phụ nữ tên Mai.",
+      "trailer": "https://www.youtube.com/embed/EX6clvIdge0",
+      "status": "now_showing",
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "title": "Dune: Part Two",
+      "poster": "assets/images/poster_dune.png",
+      "banner": "assets/images/banner_dune.png",
+      "genre": "Hành động, Viễn tưởng",
+      "duration": 166,
+      "description": "Paul Atreides dấn thân vào hành trình trả thù cho gia tộc.",
+      "trailer": "https://www.youtube.com/embed/Way9Dexny3w",
+      "status": "now_showing",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "title": "Kung Fu Panda 4",
+      "poster": "assets/images/poster_panda.png",
+      "banner": "assets/images/banner_panda.png",
+      "genre": "Hoạt hình, Hài hước",
+      "duration": 94,
+      "description": "Po trở thành Thủ lĩnh tinh thần của Thung lũng Bình Yên.",
+      "trailer": "https://www.youtube.com/embed/_inKs4eeHiI",
+      "status": "now_showing",
+      "rating": 4.2
+    },
+    {
+      "id": 4,
+      "title": "Godzilla x Kong",
+      "poster": "assets/images/poster_godzilla.png",
+      "banner": "assets/images/banner_godzilla.png",
+      "genre": "Hành động, Quái vật",
+      "duration": 115,
+      "description": "Hai quái vật huyền thoại hợp tác chống lại mối đe dọa mới.",
+      "trailer": "https://www.youtube.com/embed/lV1OOlGwExM",
+      "status": "coming_soon",
+      "rating": 0
+    },
+    {
+      "id": 5,
+      "title": "Quật Mộ Trùng Ma",
+      "poster": "assets/images/poster_exhuma.png",
+      "banner": "assets/images/banner_exhuma.png",
+      "genre": "Kinh dị, Bí ẩn",
+      "duration": 134,
+      "description": "Hai pháp sư, một thầy phong thủy và một chuyên gia liệm xác hợp tác để hóa giải một lời nguyền bí ẩn.",
+      "trailer": "https://www.youtube.com/embed/S22A4j2M_4A",
+      "status": "now_showing",
+      "rating": 4.7
+    },
+    {
+      "id": 6,
+      "title": "Civil War: Ngày Tàn",
+      "poster": "assets/images/poster_civil_war.png",
+      "banner": "assets/images/banner_civil_war.png",
+      "genre": "Hành động, Giật gân",
+      "duration": 109,
+      "description": "Một nhóm phóng viên chiến trường đi xuyên qua nước Mỹ giữa bối cảnh nội chiến thảm khốc.",
+      "trailer": "https://www.youtube.com/embed/aDyQxtgKW5s",
+      "status": "now_showing",
+      "rating": 4.4
+    },
+    {
+      "id": 7,
+      "title": "Inside Out 2",
+      "poster": "assets/images/poster_inside_out_2.png",
+      "banner": "assets/images/banner_inside_out_2.png",
+      "genre": "Hoạt hình, Gia đình",
+      "duration": 100,
+      "description": "Riley bước vào tuổi dậy thì với những cảm xúc mới đầy rắc rối: Lo Âu, Ghen Tị, Chán Nản.",
+      "trailer": "https://www.youtube.com/embed/LEjhY15eCx0",
+      "status": "coming_soon",
+      "rating": 0
+    },
+    {
+      "id": 8,
+      "title": "Deadpool & Wolverine",
+      "poster": "assets/images/poster_deadpool_wolverine.png",
+      "banner": "assets/images/banner_deadpool_wolverine.png",
+      "genre": "Hành động, Hài hước",
+      "duration": 120,
+      "description": "Cặp đôi hoàn cảnh Deadpool và Wolverine buộc phải hợp tác để cứu vũ trụ (hoặc phá hủy nó).",
+      "trailer": "https://www.youtube.com/embed/uJMCNJP2ipI",
+      "status": "coming_soon",
+      "rating": 0
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Cinemin 01",
+      "type": "Standard",
+      "layout": {
+        "rows": 8,
+        "cols": 10
+      }
+    },
+    {
+      "id": 2,
+      "name": "Cinemin VIP",
+      "type": "VIP",
+      "layout": {
+        "rows": 5,
+        "cols": 8
+      }
+    }
+  ],
+  "showtimes": [
+    {
+      "id": 101,
+      "movieId": 1,
+      "roomId": 1,
+      "startTime": "10:00",
+      "endTime": "12:15",
+      "date": "2025-12-16",
+      "price": 80000
+    },
+    {
+      "id": 102,
+      "movieId": 1,
+      "roomId": 1,
+      "startTime": "13:00",
+      "endTime": "15:15",
+      "date": "2025-12-16",
+      "price": 80000
+    },
+    {
+      "id": 103,
+      "movieId": 2,
+      "roomId": 1,
+      "startTime": "16:00",
+      "endTime": "18:50",
+      "date": "2025-12-16",
+      "price": 95000
+    },
+    {
+      "id": 104,
+      "movieId": 2,
+      "roomId": 2,
+      "startTime": "19:00",
+      "endTime": "21:50",
+      "date": "2025-12-16",
+      "price": 150000
+    },
+    {
+      "id": 105,
+      "movieId": 3,
+      "roomId": 2,
+      "startTime": "10:00",
+      "endTime": "11:35",
+      "date": "2025-12-16",
+      "price": 120000
+    },
+    {
+      "id": 106,
+      "movieId": 5,
+      "roomId": 1,
+      "startTime": "19:30",
+      "endTime": "21:45",
+      "date": "2025-12-16",
+      "price": 90000
+    },
+    {
+      "id": 107,
+      "movieId": 5,
+      "roomId": 2,
+      "startTime": "22:00",
+      "endTime": "00:15",
+      "date": "2025-12-16",
+      "price": 160000
+    },
+    {
+      "id": 108,
+      "movieId": 6,
+      "roomId": 1,
+      "startTime": "22:00",
+      "endTime": "23:50",
+      "date": "2025-12-16",
+      "price": 90000
+    },
+    {
+      "id": 109,
+      "movieId": 1,
+      "roomId": 2,
+      "startTime": "16:00",
+      "endTime": "18:15",
+      "date": "2025-12-16",
+      "price": 140000
+    }
+  ],
+  "bookings": [],
+  "users": [
+    {
+      "id": 1,
+      "username": "user123",
+      "password": "password",
+      "fullName": "Nguyen Van A",
+      "email": "user@gmail.com",
+      "avatar": "assets/images/user_avatar.png"
+    }
+  ]
+}

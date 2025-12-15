@@ -1,0 +1,171 @@
+:root {
+    /* Theme: Deep Blue & Gold */
+    --color-bg-main: #0b1622;
+    --color-bg-dark: #070f18;
+    --color-bg-light: #152232;
+    --color-primary: #d4af37; /* Gold */
+    --color-primary-hover: #b59226;
+    --color-text-main: #ffffff;
+    --color-text-muted: #a0aab5;
+    --color-danger: #e74c3c;
+    --color-success: #2ecc71;
+    
+    --font-main: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --border-radius: 8px;
+    --nav-height: 70px;
+}
+
+/* Reset & Base */
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Buttons */
+.btn-gold {
+    background-color: var(--color-primary);
+    color: var(--color-bg-dark);
+    font-weight: 600;
+    border: none;
+    padding: 10px 24px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-gold:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-bg-dark);
+}
+
+.btn-outline-gold {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: 600;
+    background: transparent;
+    padding: 8px 22px;
+    border-radius: var(--border-radius);
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg-dark);
+}
+
+/* Typography & Backgrounds */
+.text-gold {
+    color: var(--color-primary) !important;
+}
+
+.bg-gold {
+    background-color: var(--color-primary) !important;
+}
+
+/* Utilities */
+.section-title {
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 4px;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+}
+
+/* Card Style */
+.movie-card {
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card .card-img-top {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Forms & Inputs Global */
+.form-control, .form-select {
+    background-color: var(--color-bg-light) !important;
+    border: 1px solid #2c3e50 !important;
+    color: var(--color-text-main) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--color-bg-light) !important;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25) !important;
+    color: var(--color-text-main) !important;
+}
+
+/* Placeholder Contrast Fix */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Navbar Offcanvas Customization */
+.navbar .offcanvas {
+    background-color: var(--color-bg-main); /* Ensure mobile drawer has background */
+}
+
+@media (min-width: 992px) {
+    .navbar .offcanvas {
+        background-color: transparent !important; /* Transparent on Desktop */
+        box-shadow: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --nav-height: 70px;
+    }
+}

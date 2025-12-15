@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - Cinemin</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/base.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+
+    <header class="p-3 border-bottom border-secondary d-flex justify-content-between align-items-center" style="background-color: var(--color-bg-dark);">
+        <a href="index.html" class="text-gold fw-bold fs-4 text-decoration-none"><i class="fas fa-chevron-left me-2"></i>CINEMIN</a>
+        <span class="text-light">Bước 2: Thanh Toán</span>
+        <div style="width: 100px;"></div>
+    </header>
+
+    <main class="container py-5">
+        <div class="row g-5 justify-content-center">
+            <!-- Payment QR Section -->
+            <div class="col-md-5">
+                <div class="card bg-white text-dark shadow-lg border-0">
+                    <div class="card-body text-center p-4">
+                        <h5 class="text-uppercase fw-bold mb-3">Quét mã để thanh toán</h5>
+                        <p class="text-muted small mb-4">Sử dụng App Ngân hàng hoặc Ví điện tử</p>
+                        <p class="text-light text-opacity-75 small mb-4">Sử dụng App Ngân hàng hoặc Ví điện tử</p>
+                        
+                        <div class="position-relative d-inline-block mx-auto mb-4" style="min-height: 300px; min-width: 300px;">
+                            <img id="qr-code-img" src="" alt="QR Code" class="img-fluid border border-2 border-dark rounded">
+                            
+                            <!-- Loading Overlay for QR -->
+                            <div id="qr-loading" class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <div class="spinner-border text-gold" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="payment-timer" class="text-center text-danger fw-bold fs-5 mb-3">
+                            5:00
+                        </div>
+
+                        <div class="alert alert-warning d-flex align-items-center" role="alert">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <div>Vui lòng không tắt trình duyệt.</div>
+                        </div>
+                        
+                        <button class="btn btn-outline-success w-100 mt-3" id="btn-simulate-success">
+                            <i class="fas fa-check-circle me-2"></i>(Demo) Xác nhận đã thanh toán
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Order Summary -->
+            <div class="col-lg-5">
+                <div class="bg-dark p-4 rounded shadow border border-secondary" style="--bs-bg-opacity: .5;">
+                    <h4 class="text-gold mb-4">Thông Tin Đặt Vé</h4>
+                    
+                    <div class="d-flex mb-3">
+                        <img id="movie-poster" src="" class="rounded" width="80" style="aspect-ratio: 2/3; object-fit: cover;">
+                        <div class="ms-3">
+                            <h5 class="text-white fw-bold mb-1" id="movie-title">Loading...</h5>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary my-4">
+
+                    <div class="mb-2 d-flex justify-content-between">
+                        <span class="text-light text-opacity-75">Rạp:</span>
+                        <span class="text-white fw-medium" id="room-name">...</span>
+                    </div>
+                    <div class="mb-2 d-flex justify-content-between">
+                        <span class="text-light text-opacity-75">Suất chiếu:</span>
+                        <span class="text-white fw-medium" id="show-time">...</span>
+                    </div>
+                    <div class="mb-4 d-flex justify-content-between">
+                        <span class="text-light text-opacity-75">Ghế:</span>
+                        <span class="text-white fw-medium text-end" id="seat-list" style="max-width: 60%;">...</span>
+                    </div>
+                    <hr class="border-secondary">
+                    <div class="d-flex justify-content-between fs-4 fw-bold">
+                        <span class="text-white">Tổng tiền:</span>
+                        <span class="text-gold" id="payment-total">0 ₫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/payment.js"></script>
+</body>
+</html>
