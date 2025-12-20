@@ -3,15 +3,15 @@ document.addEventListener('storeReady', () => {
     const showtimeId = urlParams.get('showtimeId');
 
     if (!showtimeId) {
-        alert("Không tìm thấy suất chiếu!");
-        window.location.href = 'index.html';
+        Toast.error("Không tìm thấy suất chiếu!", 2000);
+        setTimeout(() => { window.location.href = 'index.html'; }, 2000);
         return;
     }
 
     const showtime = appStore.getShowtime(showtimeId);
     if (!showtime) {
-        alert("Suất chiếu không tồn tại!");
-        window.location.href = 'index.html';
+        Toast.error("Suất chiếu không tồn tại!", 2000);
+        setTimeout(() => { window.location.href = 'index.html'; }, 2000);
         return;
     }
 
@@ -39,11 +39,11 @@ document.addEventListener('storeReady', () => {
         // Note: This relies on the button elements being rendered already (synchronous render above)
         pendingBooking.seats.forEach(seatCode => {
             const btn = document.querySelector(`button[data-code="${seatCode}"]`);
-            if (btn && !btn.disabled) { 
+            if (btn && !btn.disabled) {
                 // Initial selection logic manually since we are outside the click handler
-                 const price = parseInt(btn.dataset.price);
-                 seatSelector.selectedSeats.push({ code: seatCode, price: price });
-                 btn.classList.add('selecting');
+                const price = parseInt(btn.dataset.price);
+                seatSelector.selectedSeats.push({ code: seatCode, price: price });
+                btn.classList.add('selecting');
             }
         });
         // Update UI summary
@@ -79,7 +79,7 @@ document.addEventListener('storeReady', () => {
 function renderBookingInfo(showtime) {
     const movie = appStore.getMovie(showtime.movieId);
     const room = appStore.getRoom(showtime.roomId);
-    
+
     document.getElementById('booking-info').innerHTML = `
         <div class="d-flex gap-3 mb-3">
             <img src="${movie.poster}" class="rounded" style="width: 80px; height: 120px; object-fit: cover;">
@@ -97,7 +97,7 @@ function updateSummary(selectedSeats) {
     const displayContainer = document.getElementById('selected-seats-display');
     const totalPriceEl = document.getElementById('total-price');
     const paymentBtn = document.getElementById('btn-payment');
-    
+
     // Render Seats List
     if (selectedSeats.length === 0) {
         displayContainer.innerHTML = '<span class="text-light text-opacity-50 small">Vui lòng chọn ghế...</span>';
@@ -107,7 +107,7 @@ function updateSummary(selectedSeats) {
         displayContainer.innerHTML = selectedSeats.map(s => `
             <span class="badge bg-gold text-black border border-white fw-bold fs-6 py-2 px-3 shadow-lg" style="letter-spacing: 1px;">${s.code}</span>
         `).join('');
-        
+
         const total = selectedSeats.reduce((sum, s) => sum + s.price, 0);
         totalPriceEl.innerText = formatCurrency(total);
         paymentBtn.disabled = false;

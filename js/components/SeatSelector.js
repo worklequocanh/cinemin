@@ -16,9 +16,9 @@ class SeatSelector {
         const rows = this.room.layout?.rows || 8;
         const cols = this.room.layout?.cols || 10;
         const rowLabels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-        
+
         console.log("Rendering seats:", rows, cols); // Debug
-        
+
         let html = `
             <div class="screen-container mb-5 text-center">
                 <div class="screen bg-light opacity-50 mx-auto mb-3" style="height: 5px; width: 80%; box-shadow: 0 10px 20px white; border-radius: 50%;"></div>
@@ -34,9 +34,9 @@ class SeatSelector {
                 const seatCode = `${rowLabels[r]}${c}`;
                 const isBooked = this.bookedSeats.includes(seatCode);
                 const isVip = this.room.type === 'VIP' || r >= rows - 2; // Mock VIP logic: Last 2 rows are VIP
-                
+
                 // Price modifier logic could go here
-                
+
                 html += `
                     <button 
                         class="btn seat-btn ${isBooked ? 'booked' : ''} ${isVip ? 'vip' : 'standard'}" 
@@ -51,7 +51,7 @@ class SeatSelector {
             }
             html += `</div>`;
         }
-        
+
         html += `
             </div>
             
@@ -118,14 +118,14 @@ class SeatSelector {
             } else {
                 // Select
                 if (this.selectedSeats.length >= 8) {
-                    alert("Bạn chỉ được chọn tối đa 8 ghế.");
+                    Toast.error("Bạn chỉ được chọn tối đa 8 ghế.");
                     return;
                 }
                 console.log("Selecting:", code);
                 this.selectedSeats.push({ code, price });
                 btn.classList.add('selecting');
             }
-            
+
             // Callback to parent
             if (this.onSelectionChange) {
                 console.log("Calling onSelectionChange with:", this.selectedSeats);
@@ -137,7 +137,7 @@ class SeatSelector {
 
         return html;
     }
-    
+
     mount(containerId) {
         document.getElementById(containerId).innerHTML = this.render();
     }

@@ -61,10 +61,10 @@ class Footer {
                     const email = input.value.trim();
                     if (email) {
                         // Mock API call
-                        alert(`Cảm ơn bạn đã đăng ký! Tin tức mới nhất sẽ được gửi tới ${email}.`);
+                        Toast.success(`Cảm ơn bạn đã đăng ký! Tin tức mới nhất sẽ được gửi tới ${email}.`);
                         input.value = ''; // Clear input
                     } else {
-                        alert("Vui lòng nhập email của bạn.");
+                        Toast.error("Vui lòng nhập email của bạn.");
                     }
                 });
             }

@@ -114,6 +114,7 @@
       </div>
     </div>
 
+    <script src="js/components/Toast.js"></script>
     <script src="js/main.js"></script>
     <script>
       document.addEventListener("storeReady", () => {
@@ -134,8 +135,7 @@
           const errorEl = document.getElementById("error-message");
 
           if (password !== confirmPassword) {
-            errorEl.innerText = "Mật khẩu xác nhận không khớp!";
-            errorEl.classList.remove("d-none");
+            Toast.error("Mật khẩu xác nhận không khớp!");
             return;
           }
 
@@ -148,11 +148,12 @@
           });
 
           if (result.success) {
-            alert("Đăng ký thành công! Vui lòng đăng nhập.");
-            window.location.href = "login.html";
+            Toast.success("Đăng ký thành công! Đang chuyển hướng...", 1500);
+            setTimeout(() => {
+              window.location.href = "login.html";
+            }, 1500);
           } else {
-            errorEl.innerText = result.message;
-            errorEl.classList.remove("d-none");
+            Toast.error(result.message);
           }
         });
     </script>

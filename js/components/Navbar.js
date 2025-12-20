@@ -7,7 +7,7 @@ class Navbar {
         const isUserLoggedIn = !!this.user;
 
         return `
-            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-bg-dark); position: sticky; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-glass">
                 <div class="container">
                     <a class="navbar-brand" href="index.html">
                         <img src="assets/images/logo.svg" alt="CINEMIN" height="40">

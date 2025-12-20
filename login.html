@@ -40,7 +40,7 @@
               type="text"
               class="form-control bg-dark text-light border-secondary"
               id="username"
-              placeholder="admin"
+              placeholder="Username"
             />
           </div>
           <div class="mb-4">
@@ -52,7 +52,7 @@
                 type="password"
                 class="form-control bg-dark text-light border-secondary"
                 id="password"
-                placeholder="admin"
+                placeholder="Password"
               />
               <button
                 class="btn btn-outline-secondary"
@@ -92,6 +92,7 @@
       </div>
     </div>
 
+    <script src="js/components/Toast.js"></script>
     <script src="js/main.js"></script>
     <script>
       document.addEventListener("storeReady", () => {
@@ -119,7 +120,7 @@
               ? decodeURIComponent(returnUrl)
               : "index.html";
           } else {
-            alert(result.message || "Đăng nhập thất bại");
+            Toast.error(result.message || "Đăng nhập thất bại");
             btn.innerText = originalText;
             btn.disabled = false;
           }

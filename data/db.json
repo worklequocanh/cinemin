@@ -1,4 +1,14 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "user123",
+      "password": "123456",
+      "fullName": "Nguyen Van A",
+      "email": "user@gmail.com",
+      "avatar": "assets/images/user_avatar.png"
+    }
+  ],
   "movies": [
     {
       "id": 1,
@@ -200,15 +210,5 @@
       "price": 140000
     }
   ],
-  "bookings": [],
-  "users": [
-    {
-      "id": 1,
-      "username": "user123",
-      "password": "password",
-      "fullName": "Nguyen Van A",
-      "email": "user@gmail.com",
-      "avatar": "assets/images/user_avatar.png"
-    }
-  ]
+  "bookings": []
 }
