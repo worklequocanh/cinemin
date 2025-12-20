@@ -1,104 +1,168 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tài Khoản - Cinemin</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <link href="assets/css/base.css" rel="stylesheet">
-</head>
-<body>
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/base.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg" />
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
 
     <main class="container py-5">
-        <div class="row g-4">
-            <!-- Sidebar -->
-            <div class="col-lg-3">
-                <div class="card bg-dark border-secondary shadow">
-                    <div class="card-body text-center p-4">
-                        <img id="profile-avatar" src="" alt="Avatar" class="rounded-circle mb-3 border border-2 border-warning" width="100" height="100">
-                        <h5 class="text-white fw-bold mb-1" id="profile-name">Loading...</h5>
-                        <p class="text-light text-opacity-75 small mb-4" id="profile-email">...</p>
-                        
-                        <div class="d-grid gap-2 text-start">
-                            <button id="tab-history" class="btn btn-gold btn-sm border-0"><i class="fas fa-ticket-alt me-2"></i>Vé Của Tôi</button>
-                            <button id="tab-info" class="btn btn-outline-light btn-sm border-0"><i class="fas fa-user-edit me-2"></i>Thông Tin Cá Nhân</button>
-                            <hr class="border-secondary my-2">
-                            <button onclick="appStore.logout()" class="btn btn-outline-danger btn-sm border-0 text-start"><i class="fas fa-sign-out-alt me-2"></i>Đăng Xuất</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row g-4">
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+          <div class="card bg-dark border-secondary shadow">
+            <div class="card-body text-center p-4">
+              <img
+                id="profile-avatar"
+                src=""
+                alt="Avatar"
+                class="rounded-circle mb-3 border border-2 border-warning"
+                width="100"
+                height="100"
+              />
+              <h5 class="text-white fw-bold mb-1" id="profile-name">
+                Loading...
+              </h5>
+              <p
+                class="text-light text-opacity-75 small mb-4"
+                id="profile-email"
+              >
+                ...
+              </p>
 
-            <!-- Main Content -->
-            <div class="col-lg-9">
-                <div class="bg-dark p-4 rounded border border-secondary" style="--bs-bg-opacity: .5;">
-                    <!-- History Section -->
-                    <div id="content-history">
-                        <h4 class="section-title text-gold mb-4">Lịch Sử Đặt Vé</h4>
-                        
-                        <div class="table-responsive">
-                            <table class="table table-dark table-hover align-middle">
-                                <thead>
-                                    <tr class="text-gold border-bottom border-secondary">
-                                        <th scope="col" class="py-3">Mã Vé</th>
-                                        <th scope="col" class="py-3">Phim</th>
-                                        <th scope="col" class="py-3">Rạp/Phòng</th>
-                                        <th scope="col" class="py-3">Suất Chiếu</th>
-                                        <th scope="col" class="py-3">Ghế</th>
-                                        <th scope="col" class="py-3">Tổng Tiền</th>
-                                        <th scope="col" class="py-3">Trạng Thái</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="booking-history-body">
-                                    <!-- Data injected here -->
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div id="empty-history" class="text-center py-5 d-none">
-                            <i class="fas fa-ticket-alt fs-1 text-light text-opacity-50 mb-3"></i>
-                            <p class="text-light text-opacity-75">Bạn chưa có lịch sử đặt vé nào.</p>
-                            <a href="index.html" class="btn btn-gold">Đặt Vé Ngay</a>
-                        </div>
-                    </div>
-
-                    <!-- Personal Info Section -->
-                    <div id="content-info" class="d-none">
-                        <h4 class="section-title text-gold mb-4">Thông Tin Cá Nhân</h4>
-                        <form id="profile-form">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label text-light">Họ và Tên</label>
-                                    <input type="text" id="info-fullname" class="form-control bg-black text-light border-secondary" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-light">Email</label>
-                                    <input type="email" id="info-email" class="form-control bg-black text-light border-secondary" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-light">Số Điện Thoại</label>
-                                    <input type="tel" id="info-phone" class="form-control bg-black text-light border-secondary" value="0901234567" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label text-light">Mật Khẩu</label>
-                                    <input type="password" class="form-control bg-black text-light border-secondary" value="********" disabled>
-                                </div>
-                            </div>
-                            <!-- Future update: Add Edit button here -->
-                            <div class="mt-4">
-                                <button type="button" class="btn btn-outline-gold" onclick="alert('Tính năng cập nhật thông tin đang được bảo trì.')">
-                                    <i class="fas fa-edit me-2"></i>Chỉnh Sửa
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+              <div class="d-grid gap-2 text-start">
+                <button id="tab-history" class="btn btn-gold btn-sm border-0">
+                  <i class="fas fa-ticket-alt me-2"></i>Vé Của Tôi
+                </button>
+                <button
+                  id="tab-info"
+                  class="btn btn-outline-light btn-sm border-0"
+                >
+                  <i class="fas fa-user-edit me-2"></i>Thông Tin Cá Nhân
+                </button>
+                <hr class="border-secondary my-2" />
+                <button
+                  onclick="appStore.logout()"
+                  class="btn btn-outline-danger btn-sm border-0 text-start"
+                >
+                  <i class="fas fa-sign-out-alt me-2"></i>Đăng Xuất
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9">
+          <div
+            class="bg-dark p-4 rounded border border-secondary"
+            style="--bs-bg-opacity: 0.5"
+          >
+            <!-- History Section -->
+            <div id="content-history">
+              <h4 class="section-title text-gold mb-4">Lịch Sử Đặt Vé</h4>
+
+              <div class="table-responsive">
+                <table class="table table-dark table-hover align-middle">
+                  <thead>
+                    <tr class="text-gold border-bottom border-secondary">
+                      <th scope="col" class="py-3">Mã Vé</th>
+                      <th scope="col" class="py-3">Phim</th>
+                      <th scope="col" class="py-3">Rạp/Phòng</th>
+                      <th scope="col" class="py-3">Suất Chiếu</th>
+                      <th scope="col" class="py-3">Ghế</th>
+                      <th scope="col" class="py-3">Tổng Tiền</th>
+                      <th scope="col" class="py-3">Trạng Thái</th>
+                    </tr>
+                  </thead>
+                  <tbody id="booking-history-body">
+                    <!-- Data injected here -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="empty-history" class="text-center py-5 d-none">
+                <i
+                  class="fas fa-ticket-alt fs-1 text-light text-opacity-50 mb-3"
+                ></i>
+                <p class="text-light text-opacity-75">
+                  Bạn chưa có lịch sử đặt vé nào.
+                </p>
+                <a href="index.html" class="btn btn-gold">Đặt Vé Ngay</a>
+              </div>
+            </div>
+
+            <!-- Personal Info Section -->
+            <div id="content-info" class="d-none">
+              <h4 class="section-title text-gold mb-4">Thông Tin Cá Nhân</h4>
+              <form id="profile-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label text-light">Họ và Tên</label>
+                    <input
+                      type="text"
+                      id="info-fullname"
+                      class="form-control bg-black text-light border-secondary"
+                      disabled
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-light">Email</label>
+                    <input
+                      type="email"
+                      id="info-email"
+                      class="form-control bg-black text-light border-secondary"
+                      disabled
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-light">Số Điện Thoại</label>
+                    <input
+                      type="tel"
+                      id="info-phone"
+                      class="form-control bg-black text-light border-secondary"
+                      value="0901234567"
+                      disabled
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label text-light">Mật Khẩu</label>
+                    <input
+                      type="password"
+                      class="form-control bg-black text-light border-secondary"
+                      value="********"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <!-- Future update: Add Edit button here -->
+                <div class="mt-4">
+                  <button
+                    type="button"
+                    class="btn btn-outline-gold"
+                    onclick="alert('Tính năng cập nhật thông tin đang được bảo trì.')"
+                  >
+                    <i class="fas fa-edit me-2"></i>Chỉnh Sửa
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -108,5 +172,5 @@
     <script src="js/components/Navbar.js"></script>
     <script src="js/components/Footer.js"></script>
     <script src="js/pages/profile.js"></script>
-</body>
+  </body>
 </html>

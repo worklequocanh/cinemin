@@ -5,11 +5,13 @@ class Navbar {
 
     render() {
         const isUserLoggedIn = !!this.user;
-        
+
         return `
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--color-bg-dark); position: sticky; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1);">
                 <div class="container">
-                    <a class="navbar-brand text-gold fs-3 fw-bold" href="index.html">CINEMIN</a>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/images/logo.svg" alt="CINEMIN" height="40">
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

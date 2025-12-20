@@ -1,97 +1,161 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinemin - Trải Nghiệm Điện Ảnh Đỉnh Cao</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome 6 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="assets/css/base.css" rel="stylesheet">
-</head>
-<body>
 
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome 6 -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="assets/css/base.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg" />
+  </head>
+  <body>
     <!-- Navbar -->
     <div id="navbar-placeholder"></div>
 
     <main>
-        <!-- Hero Slider -->
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="hero-slider-container">
-                <!-- Slide 1: Kung Fu Panda 4 -->
-                <div class="carousel-item active">
-                    <img src="assets/images/banner_panda.png" class="d-block w-100" alt="Kung Fu Panda 4" style="height: 70vh; object-fit: cover; filter: brightness(0.7);">
-                    <div class="carousel-caption d-none d-md-block text-start mb-5">
-                        <span class="badge bg-gold text-dark mb-2 fs-6">Độc Quyền</span>
-                        <h1 class="display-3 fw-bold text-uppercase text-shadow">Kung Fu Panda 4</h1>
-                        <p class="lead text-light text-shadow">Huyền thoại Gấu Trúc trở lại với những trận chiến Kung Fu đỉnh cao.</p>
-                        <a href="detail.html?id=3" class="btn btn-gold btn-lg fw-bold shadow-lg"><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a>
-                    </div>
-                </div>
-                <!-- Slide 2: Dune Part Two -->
-                <div class="carousel-item">
-                    <img src="assets/images/banner_dune.png" class="d-block w-100" alt="Dune Part Two" style="height: 70vh; object-fit: cover; filter: brightness(0.7);">
-                    <div class="carousel-caption d-none d-md-block text-start mb-5">
-                        <span class="badge bg-danger mb-2 fs-6">Bom Tấn</span>
-                        <h1 class="display-3 fw-bold text-uppercase text-shadow">Dune: Part Two</h1>
-                        <p class="lead text-light text-shadow">Cuộc chiến giành lấy Arrakis bước vào giai đoạn khốc liệt nhất.</p>
-                        <a href="detail.html?id=2" class="btn btn-gold btn-lg fw-bold shadow-lg"><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a>
-                    </div>
-                </div>
-                <!-- Slide 3: Mai -->
-                <div class="carousel-item">
-                    <img src="assets/images/banner_mai.png" class="d-block w-100" alt="Mai" style="height: 70vh; object-fit: cover; filter: brightness(0.6);">
-                    <div class="carousel-caption d-none d-md-block text-start mb-5">
-                        <span class="badge bg-primary mb-2 fs-6">Tình Cảm</span>
-                        <h1 class="display-3 fw-bold text-uppercase text-shadow">MAI</h1>
-                        <p class="lead text-light text-shadow">Câu chuyện tình yêu đầy cảm xúc và nước mắt.</p>
-                        <a href="detail.html?id=1" class="btn btn-gold btn-lg fw-bold shadow-lg"><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a>
-                    </div>
-                </div>
+      <!-- Hero Slider -->
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="hero-slider-container">
+          <!-- Slide 1: Kung Fu Panda 4 -->
+          <div class="carousel-item active">
+            <img
+              src="assets/images/banner_panda.png"
+              class="d-block w-100"
+              alt="Kung Fu Panda 4"
+              style="height: 70vh; object-fit: cover; filter: brightness(0.7)"
+            />
+            <div class="carousel-caption d-none d-md-block text-start mb-5">
+              <span class="badge bg-gold text-dark mb-2 fs-6">Độc Quyền</span>
+              <h1 class="display-3 fw-bold text-uppercase text-shadow">
+                Kung Fu Panda 4
+              </h1>
+              <p class="lead text-light text-shadow">
+                Huyền thoại Gấu Trúc trở lại với những trận chiến Kung Fu đỉnh
+                cao.
+              </p>
+              <a
+                href="detail.html?id=3"
+                class="btn btn-gold btn-lg fw-bold shadow-lg"
+                ><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a
+              >
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+          <!-- Slide 2: Dune Part Two -->
+          <div class="carousel-item">
+            <img
+              src="assets/images/banner_dune.png"
+              class="d-block w-100"
+              alt="Dune Part Two"
+              style="height: 70vh; object-fit: cover; filter: brightness(0.7)"
+            />
+            <div class="carousel-caption d-none d-md-block text-start mb-5">
+              <span class="badge bg-danger mb-2 fs-6">Bom Tấn</span>
+              <h1 class="display-3 fw-bold text-uppercase text-shadow">
+                Dune: Part Two
+              </h1>
+              <p class="lead text-light text-shadow">
+                Cuộc chiến giành lấy Arrakis bước vào giai đoạn khốc liệt nhất.
+              </p>
+              <a
+                href="detail.html?id=2"
+                class="btn btn-gold btn-lg fw-bold shadow-lg"
+                ><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a
+              >
+            </div>
+          </div>
+          <!-- Slide 3: Mai -->
+          <div class="carousel-item">
+            <img
+              src="assets/images/banner_mai.png"
+              class="d-block w-100"
+              alt="Mai"
+              style="height: 70vh; object-fit: cover; filter: brightness(0.6)"
+            />
+            <div class="carousel-caption d-none d-md-block text-start mb-5">
+              <span class="badge bg-primary mb-2 fs-6">Tình Cảm</span>
+              <h1 class="display-3 fw-bold text-uppercase text-shadow">MAI</h1>
+              <p class="lead text-light text-shadow">
+                Câu chuyện tình yêu đầy cảm xúc và nước mắt.
+              </p>
+              <a
+                href="detail.html?id=1"
+                class="btn btn-gold btn-lg fw-bold shadow-lg"
+                ><i class="fas fa-ticket-alt me-2"></i>Đặt Vé Ngay</a
+              >
+            </div>
+          </div>
         </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-
-
-        <!-- Now Showing -->
-        <section id="now-showing" class="container mb-5 pt-5">
-            <h2 class="section-title text-light mb-4">Đang Chiếu</h2>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4" id="movie-list-now-showing">
-                <!-- Movie Cards Injected via JS -->
-                <div class="text-center w-100 py-5">
-                    <div class="spinner-border text-gold" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
+      <!-- Now Showing -->
+      <section id="now-showing" class="container mb-5 pt-5">
+        <h2 class="section-title text-light mb-4">Đang Chiếu</h2>
+        <div
+          class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4"
+          id="movie-list-now-showing"
+        >
+          <!-- Movie Cards Injected via JS -->
+          <div class="text-center w-100 py-5">
+            <div class="spinner-border text-gold" role="status">
+              <span class="visually-hidden">Loading...</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Promotion Banner -->
-        <section class="container mb-5">
-            <div class="rounded overflow-hidden position-relative shadow-lg pointer-event">
-                <img src="assets/images/promotion_banner.png" class="w-100" style="height: 300px; object-fit: cover;" alt="Promotion">
-            </div>
-        </section>
+      <!-- Promotion Banner -->
+      <section class="container mb-5">
+        <div
+          class="rounded overflow-hidden position-relative shadow-lg pointer-event"
+        >
+          <img
+            src="assets/images/promotion_banner.png"
+            class="w-100"
+            style="height: 300px; object-fit: cover"
+            alt="Promotion"
+          />
+        </div>
+      </section>
 
-        <!-- Coming Soon -->
-        <section id="coming-soon" class="container mb-5">
-            <h2 class="section-title text-light">Sắp Chiếu</h2>
-            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4" id="movie-list-coming-soon">
-                <!-- Movie Cards -->
-            </div>
-        </section>
-
+      <!-- Coming Soon -->
+      <section id="coming-soon" class="container mb-5">
+        <h2 class="section-title text-light">Sắp Chiếu</h2>
+        <div
+          class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4"
+          id="movie-list-coming-soon"
+        >
+          <!-- Movie Cards -->
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -104,5 +168,5 @@
     <script src="js/components/Footer.js"></script>
     <script src="js/components/MovieCard.js"></script>
     <script src="js/pages/home.js"></script>
-</body>
+  </body>
 </html>
