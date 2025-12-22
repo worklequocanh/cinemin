@@ -14,11 +14,11 @@ class Store {
         try {
             const response = await fetch('./data/db.json');
             const data = await response.json();
-            
+
             this.movies = data.movies || [];
             this.rooms = data.rooms || [];
             this.showtimes = data.showtimes || [];
-            
+
             // Bookings typically come from LocalStorage in this client-side demo
             // But we load from db.json initially if localStorage is empty
             const localBookings = localStorage.getItem('bookings');
@@ -54,16 +54,16 @@ class Store {
     getBookedSeats(showtimeId) {
         // Find all bookings for this showtime
         const showtimeBookings = this.bookings.filter(b => b.showtimeId == showtimeId);
-        console.log(`Checking booked seats for showtime ${showtimeId}`, { 
+        console.log(`Checking booked seats for showtime ${showtimeId}`, {
             totalBookings: this.bookings.length,
-            matches: showtimeBookings.length, 
-            booked: showtimeBookings 
+            matches: showtimeBookings.length,
+            booked: showtimeBookings
         });
-        
+
         // Flatten all seats from these bookings into a single array
         return showtimeBookings.reduce((allSeats, b) => allSeats.concat(b.seats || b.seatCodes), []); // Handle both naming conventions if any
     }
-    
+
     getMovie(id) {
         return this.movies.find(m => m.id == id);
     }
@@ -71,11 +71,11 @@ class Store {
     getShowtime(id) {
         return this.showtimes.find(s => s.id == id);
     }
-    
+
     getShowtimesByMovie(movieId) {
         return this.showtimes.filter(s => s.movieId == movieId);
     }
-    
+
     getRoom(id) {
         return this.rooms.find(r => r.id == id);
     }
@@ -95,7 +95,7 @@ class Store {
 
     checkAuth(redirectIfMissing = false) {
         if (this.user) return true;
-        
+
         if (redirectIfMissing) {
             const currentUrl = encodeURIComponent(window.location.href);
             window.location.href = `login.html?returnUrl=${currentUrl}`;
@@ -116,13 +116,13 @@ class Store {
         if (this.users.some(u => u.email === user.email)) {
             return { success: false, message: "Email đã được sử dụng!" };
         }
-        
+
         const newUser = {
             id: Date.now(),
             avatar: "assets/images/user_avatar.png",
             ...user
         };
-        
+
         this.users.push(newUser);
         this.saveUsers();
         return { success: true, message: "Đăng ký thành công!" };
@@ -153,23 +153,13 @@ const formatCurrency = (amount) => {
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 };
 
-// Component Loader Helper
-const loadComponent = async (placeholderId, componentPath) => {
-    const placeholder = document.getElementById(placeholderId);
-    if (!placeholder) return;
-    
-    // In a real module system we would import. 
-    // Here we will rely on including scripts in HTML or just generic rendering if they are classes.
-    // However, for this MPA structure without modules, we might just instantiate classes if they are loaded globally.
-};
-
 // DOM Content Loaded wrapper to start app
 document.addEventListener('DOMContentLoaded', async () => {
     await appStore.init();
-    
+
     // Broadcast event that data is ready
     const event = new Event('storeReady');
     document.dispatchEvent(event);
-    
+
     console.log("Cinemin Store Initialized");
 });
