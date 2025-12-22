@@ -40,7 +40,7 @@ class Footer {
                     </div>
                     <hr class="border-secondary my-4">
                     <div class="text-center text-light text-opacity-50 small">
-                        &copy; 2025 Cinemin. All rights reserved. Designed by Antigravity.
+                        &copy; 2025 Cinemin. All rights reserved. Designed by WorkLeQuocAnh.
                     </div>
                 </div>
             </footer>
